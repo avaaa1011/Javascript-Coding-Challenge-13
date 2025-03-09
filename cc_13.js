@@ -44,9 +44,6 @@ card.appendChild(saveButton);});
     const employeeComtainer = document.getElementById("employeeContainer");
     employeeComtainer.appendChild(card);
     //employee's names and positions 
-createElement("Jennifer Jareau", "Communications Liason of the BAU");
-createElement("Spencer Reid", "SSA of the BAU");
-createElement("Penelope Garcia", "Technical Analyst of the BAU");
 }
 //employee's names and positions 
 createElement("Jennifer Jareau", "Communications Liason of the BAU");
