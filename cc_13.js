@@ -26,3 +26,12 @@ function createElement(name, position) //function that creates the employee card
 createElement("Jennifer Jareau", "Communications Liason of the BAU");
 createElement("Spencer Reid", "SSA of the BAU");
 createElement("Penelope Garcia", "Technical Analyst of the BAU");
+
+//task 3: converting nodelists to arrays for bulk updates
+function updatingEmployeeCards() //
+{
+    const employeeCards = document.querySelectorAll('.employee.card'); //selects all the elements within the employee's card class
+    const employeeCardsArray = Array.from(employeeCards); //converting nodelist into an array
+    employeeCardsArray.forEach((card) => {card.style.backgroundColor = 'yellow';  }); //array method to update the card's style
+}
+updatingEmployeeCards();
