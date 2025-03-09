@@ -13,7 +13,29 @@ function createElement(name, position) //function that creates the employee card
     removeButton.textContent = "Remove";
     removeButton.setAttribute("class", "remove-btn");
     //when the button is clicked the card will actually be removed
-    removeButton.addEventListener('click', () => {card.remove();}); 
+    
+//task 4:implementing removal of employee cards w/ event bubbling 
+removeButton.addEventListener('click', () => {event.stopPropagation();}); 
+card.remove();
+
+// (Task 5) adding functionality when double-click on the card
+card.addEventListener('click', () => {
+const currentName = employeeName.textContent;
+const currentPosition = employeePosition.textContent;
+employeeName.innerHTML = `<input type="text" value="${currentName}" />`;
+employeePosition.innerHTML = `<input type="text" value="${currentPosition}" />`;
+const saveButton = document.createElement('button'); // create save button
+saveButton.textContent = 'Save';
+saveButton.setAttribute('class', 'save-btn');    
+saveButton.addEventListener('click', () => 
+    { 
+    const updatedName = employeeName.querySelector('input').value;
+    const updatedPosition = employeePosition.querySelector('input').value;
+    employeeName.textContent = updatedName;
+    employeePosition.textContent = updatedPosition;
+    saveButton.remove();
+    });
+card.appendChild(saveButton);});
 
     //appending the employee cards to the "employeeComtainer"
     card.appendChild(heading); //adding employee's name
