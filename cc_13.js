@@ -18,7 +18,7 @@ function createElement(name, position) //function that creates the employee card
 removeButton.addEventListener('click', () => {event.stopPropagation();}); 
 card.remove();
 
-// (Task 5) adding functionality when double-click on the card
+//task 5: inline editing of employee details
 card.addEventListener('click', () => {
 const currentName = employeeName.textContent;
 const currentPosition = employeePosition.textContent;
@@ -43,6 +43,10 @@ card.appendChild(saveButton);});
     card.appendChild(removeButton); //adding a remove button
     const employeeComtainer = document.getElementById("employeeContainer");
     employeeComtainer.appendChild(card);
+    //employee's names and positions 
+createElement("Jennifer Jareau", "Communications Liason of the BAU");
+createElement("Spencer Reid", "SSA of the BAU");
+createElement("Penelope Garcia", "Technical Analyst of the BAU");
 }
 //employee's names and positions 
 createElement("Jennifer Jareau", "Communications Liason of the BAU");
